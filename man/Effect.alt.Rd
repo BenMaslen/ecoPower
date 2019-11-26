@@ -106,7 +106,7 @@ powersim.manyglm(glm.spid,N=20,pred="Treatment",
 
 #change effect size parameterisation
 effect.mat <- effect.alt(glm.spid,effect.size=1.5,
-                         pred="Treatment",increasers,decreasers,
+                          pred="Treatment",increasers,decreasers,
                          K=c(3,1,2),OrderedLevels = FALSE)
 powersim.manyglm(glm.spid,N=20,pred="Treatment",
                  coeffs=effect.mat)
