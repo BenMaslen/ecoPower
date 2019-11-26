@@ -68,7 +68,7 @@
 #' extend.fit <- extend.manyglm(glm.spid,N=10,
 #'        coeffs=effect.mat) #not needed to be executed for power estimate
 #' powersim.manyglm(glm.spid,N=20,pred="soil.dry",
-#'        coeffs=effect.mat,nsim=100,cl=makeCluster(1))
+#'        coeffs=effect.mat)
 #'
 #' #Find power for categorical predictor with 4 levels, N=10, effect.size=1.5
 #' X$Treatment <- rep(c("A","B","C","D"),each=7)
@@ -78,14 +78,14 @@
 #' extend.fit <- extend.manyglm(glm.spid,N=20,
 #'      coeffs=effect.mat) #not needed to be executed for power estimate
 #' powersim.manyglm(glm.spid,N=20,pred="Treatment",
-#'      coeffs=effect.mat,nsim=100,cl=makeCluster(1))
+#'      coeffs=effect.mat)
 #'
 #' #change effect size parameterisation
 #' effect.mat <- effect.alt(glm.spid,effect.size=1.5,
 #'                          pred="Treatment",increasers,decreasers,
 #'                          K=c(3,1,2),OrderedLevels = FALSE)
 #' powersim.manyglm(glm.spid,N=20,pred="Treatment",
-#'                  coeffs=effect.mat,nsim=100,cl=makeCluster(1))
+#'                  coeffs=effect.mat)
 #'
 #'#change sampling design
 #' X_new <- X
@@ -93,7 +93,7 @@
 #' extend.fit <- extend.manyglm(glm.spid,N=20,
 #'    coeffs=effect.mat,use.design = FALSE,newdata=X_new)
 #' powersim.manyglm(glm.spid,N=20,pred="Treatment",
-#'    coeffs=effect.mat,use.design = FALSE,newdata=X_new,nsim=100,cl=makeCluster(1))
+#'    coeffs=effect.mat,use.design = FALSE,newdata=X_new)
 #' @export
 extend.manyglm <- function(fit,N, coeffs = coef(fit),use.design=TRUE,newdata){
   #extract the dun-smyth residuals
